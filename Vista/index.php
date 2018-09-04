@@ -1,4 +1,4 @@
-<?php require '../php/Temperatura.php'; ?>
+<?php require '../php/TemperaturaD.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -170,7 +170,7 @@
                 <h3>Temperatura por horas</h3>
             </header>
 
-            <?php Temperatura::DatosTemperaturaHoras(); ?>
+            <?php TemperaturaD::DatosTemperaturaHoras(); ?>
 
             <div>
                 <div id="containerTemp" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
@@ -257,7 +257,7 @@
             <header class="section-header">
                 <h3>Temperatura por días</h3>
             </header>
-
+            <?php TemperaturaD::DatosTemperaturaDias(); ?>
             <div>
                 <div id="containerTemp_dias" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
