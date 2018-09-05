@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
+    <?php include ("../php/verificacionCodigo.php")?>
     <!-- Favicons -->
     <link href="../img/icono.ico" rel="icon">
 
@@ -70,8 +70,8 @@
         <div class="card-img-overlay">
             <h3 class="card-title" id="titulo">Ingrese el código de verificación.</h3>
 
-            <form>
-                <div class="form-group" method="post" action="../php/control.php?action=verificarC">
+            <form action="../php/verificacionCodigo.php?action=login" method="post" enctype="multipart/form-data">
+                <div class="form-group" >
                     <label for="exampleInputPassword1" id="lbcodigo">Código</label>
                     <input type="password" class="form-control" id="codigo" name="codigo" placeholder="Código">
                 </div>

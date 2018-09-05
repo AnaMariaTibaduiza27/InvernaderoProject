@@ -5,21 +5,23 @@
  * Date: 5/09/2018
  * Time: 11:14 AM
  */
-
+$vr = new verificacionCodigo();
+if (@$_GET['action'] == "login"){
+    $vr->verificarC();
+}
 class verificacionCodigo
 {
-    static public function verificarC (){
+        function verificarC (){
         try {
             $codigo="123invernadero";
             $codigoIngresado= $_POST['codigo'];
-
-            if (strcmp($codigo==$codigoIngresado)){
-                header("Location: ../Vista/preControl.php?respuesta=correcto");
+            if ($codigo == $codigoIngresado){
+                header("Location: ../Vista/index.php") ;
             } else{
-                header("Location: ../Vista/preControl.php?respuesta=error");
+               echo "Error en la verificación, intente de nuevo";
             }
-
         } catch (Exception $e) {
+            var_dump($e);
             header("Location: ../Vista/preControl.php?respuesta=error");
         }
     }
