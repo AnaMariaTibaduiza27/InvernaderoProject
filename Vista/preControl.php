@@ -71,13 +71,25 @@
             <h3 class="card-title" id="titulo">Ingrese el código de verificación.</h3>
 
             <form>
-                <div class="form-group">
+                <div class="form-group" method="post" action="../php/control.php?action=verificarC">
                     <label for="exampleInputPassword1" id="lbcodigo">Código</label>
-                    <input type="password" class="form-control" id="codigo" placeholder="Código">
+                    <input type="password" class="form-control" id="codigo" name="codigo" placeholder="Código">
                 </div>
 
                 <button type="submit" class="btn btn-primary " id="verificar" name="verificar">Verificar</button>
             </form>
+
+            <?php if(!empty($_GET['respuesta'])){ ?>
+                <?php if ($_GET['respuesta'] == "correcto"){ ?>
+                    <!-- La página de datos debe abrirse -->
+                <?php }else {?>
+                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                        <strong>Error!</strong> Código incorrecto
+                    </div>
+                <?php } ?>
+            <?php } ?>
 
         </div>
     </div>
