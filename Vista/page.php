@@ -194,38 +194,41 @@ require "../php/Temperatura.php";
             <header class="section-header">
                 <h3>Nuestro personal</h3>
             </header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-                            <h5 class="card-title">Card title</h5>
-                            <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="../img/per1.png" alt="Card image cap" style="width: 286px;height: 240px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
 
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="../img/per1.png" alt="Card image cap" style="width: 286px;height: 240px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="../img/per2.jpg" alt="Card image cap" style="width: 286px;height: 240px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
 
 
         </div>
