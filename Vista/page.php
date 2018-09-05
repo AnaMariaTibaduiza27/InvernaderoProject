@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-require "../php/Temperatura.php";
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +67,7 @@ require "../php/Temperatura.php";
                     <a href="#personal">Personal</a>
                 </li>
                 <li class="menu-active">
-                    <a href="index.html">Control</a>
+                    <a href="../Vista/preControl.php">Control</a>
                 </li>
                 <li>
                     <a href="#contact">Contactenos</a>

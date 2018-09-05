@@ -257,6 +257,7 @@
             <header class="section-header">
                 <h3>Temperatura por días</h3>
             </header>
+            <!--<script type="text/javascript" src="https://www.dwebresources.com/widgets/js_calendar.js.php?theme=flick&width=600&height=600"></script>-->
             <?php TemperaturaD::DatosTemperaturaDias(); ?>
             <div>
                 <div id="containerTemp_dias" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
