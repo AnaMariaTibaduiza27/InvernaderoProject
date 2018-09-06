@@ -170,10 +170,15 @@
                 <h3>Temperatura por horas</h3>
             </header>
 
-            <?php TemperaturaD::DatosTemperaturaHoras(); ?>
+            <?php TemperaturaD::DatosTemperaturaHoras();
+                    $datos=array();
+                    $datos=TemperaturaD::DatosTemperaturaHoras();
+            ?>
 
             <div>
                 <div id="containerTemp" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
+
+                <?php print_r($datos[0][0]); ?>
 
                 <script type="text/javascript">
 
@@ -225,7 +230,7 @@
                         series: [{
                             name: 'Temperaturas',
                             data: [
-                                [59.5, 80.4],
+                                [0,12],
                                 [-8.7, 6.5],
                                 [-3.5, 9.4],
                                 [-1.4, 19.9],
@@ -258,7 +263,7 @@
                 <h3>Temperatura por días</h3>
             </header>
             <!--<script type="text/javascript" src="https://www.dwebresources.com/widgets/js_calendar.js.php?theme=flick&width=600&height=600"></script>-->
-            <?php TemperaturaD::DatosTemperaturaDias(); ?>
+            <?php //TemperaturaD::DatosTemperaturaDias(); ?>
             <div>
                 <div id="containerTemp_dias" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
