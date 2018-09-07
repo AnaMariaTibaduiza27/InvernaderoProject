@@ -170,15 +170,16 @@
                 <h3>Temperatura por horas</h3>
             </header>
 
-            <?php TemperaturaD::DatosTemperaturaHoras();
-                    $datos=array();
-                    $datos=TemperaturaD::DatosTemperaturaHoras();
-            ?>
-
             <div>
                 <div id="containerTemp" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
-                <?php print_r($datos[0][0]); ?>
+                <?php TemperaturaD::DatosTemperaturaHoras();
+                $datos=array();
+                $datos=TemperaturaD::DatosTemperaturaHoras();
+
+                ?>
+
+
 
                 <script type="text/javascript">
 
@@ -229,20 +230,14 @@
 
                         series: [{
                             name: 'Temperaturas',
-                            data: [
-                                [0,12],
-                                [-8.7, 6.5],
-                                [-3.5, 9.4],
-                                [-1.4, 19.9],
-                                [0.0, 22.6],
-                                [2.9, 29.5],
-                                [9.2, 30.7],
-                                [7.3, 26.5],
-                                [4.4, 18.0],
-                                [-3.1, 11.4],
-                                [-5.2, 10.4],
-                                [-13.5, 9.8]
-                            ]
+                            data:
+                                <?php
+                                    for ($i=0;$i<count($datos);$i++) {
+
+                                        $array=json_encode($datos);
+                                    }
+                                    echo $array;
+                                ?>
                         }]
 
                     });
@@ -263,7 +258,7 @@
                 <h3>Temperatura por días</h3>
             </header>
             <!--<script type="text/javascript" src="https://www.dwebresources.com/widgets/js_calendar.js.php?theme=flick&width=600&height=600"></script>-->
-            <?php //TemperaturaD::DatosTemperaturaDias(); ?>
+            <?php TemperaturaD::DatosTemperaturaDias(); ?>
             <div>
                 <div id="containerTemp_dias" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
@@ -343,7 +338,11 @@
             <header class="section-header">
                 <h3>Temperatura por Meses</h3>
             </header>
+            <?php TemperaturaD::DatosTemperaturaMeses();
+            $datos=array();
+            $datos=TemperaturaD::DatosTemperaturaMeses();
 
+            ?>
             <div>
                 <div id="containerTemp_meses" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
@@ -396,19 +395,14 @@
 
                         series: [{
                             name: 'Temperaturas',
-                            data: [
-                                [59.5, 80.4],
-                                [-8.7, 6.5],
-                                [-3.5, 9.4],
-                                [-1.4, 19.9],
-                                [0.0, 22.6],
-                                [2.9, 29.5],
-                                [9.2, 30.7],
-                                [7.3, 26.5],
-                                [4.4, 18.0],
-                                [-3.1, 11.4],
-                                [-5.2, 10.4],
-                                [-13.5, 9.8]
+                            data:
+                            <?php
+                            for ($i=0;$i<count($datos);$i++) {
+
+                                $array=json_encode($datos);
+                            }
+                            echo $array;
+                            ?>
                             ]
                         }]
 
@@ -428,7 +422,9 @@
             <header class="section-header">
                 <h3>Temperatura por Años</h3>
             </header>
-
+             <?php TemperaturaD::DatosTemperaturaAños();
+             $datos=array();
+             $datos=TemperaturaD::DatosTemperaturaAños();?>
             <div>
                 <div id="containerTemp_ages" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
@@ -481,13 +477,14 @@
 
                         series: [{
                             name: 'Temperaturas',
-                            data: [
-                                [59.5, 80.4],
-                                [-8.7, 6.5],
-                                [-3.5, 9.4],
-                                [-1.4, 19.9],
-                                [0.0, 22.6]
-                            ]
+                            data:
+                            <?php
+                            for ($i=0;$i<count($datos);$i++) {
+
+                                $array=json_encode($datos);
+                            }
+                            echo $array;
+                            ?>
                         }]
 
                     });
