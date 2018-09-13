@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -45,7 +51,7 @@
 
         <div id="logo" class="pull-left">
             <h1>
-                <a href="preControl.php" class="scrollto">Invernadero</a>
+                <a href="preControl.php" class="scrollto">FSC Flower S.A.S</a>
             </h1>
         </div>
 

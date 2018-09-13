@@ -1,4 +1,5 @@
 <?php require '../php/TemperaturaD.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Libraries CSS Files -->
     <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -27,6 +28,8 @@
 
     <!-- Main Stylesheet File -->
     <link href="../css/style.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -105,7 +108,7 @@
 
             <div class="carousel-inner" role="listbox">
 
-                <div class="carousel-item active" style="background-image: url('../img/intro-carousel/1.jpg');">
+                <div class="carousel-item active" style="background-image: url('../img/intro-carousel/flor.jpg');">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>Ver Temperatura</h2>
@@ -168,82 +171,89 @@
 
             <header class="section-header">
                 <h3>Temperatura por horas</h3>
+
             </header>
 
-            <div>
-                <div id="containerTemp" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
+           <!-- <form action="../php/TemperaturaD.php?action=dia" method="POST" name="formulario">
+                <input id="dia" type="date" name="dia" > <br><br>
+                <input type="submit" value="Enviar" class="btn btn-primary " id="irDia" name="irDia" />
+            </form>-->
 
-                <?php TemperaturaD::DatosTemperaturaHoras();
-                $datos=array();
-                $datos=TemperaturaD::DatosTemperaturaHoras();
+                <div>
+                    <div id="containerTemp" style="min-width: 310px; height: 480px; margin: 0 auto"></div>
 
-                ?>
+                    <?php TemperaturaD::DatosTemperaturaHoras();
+                    $datos=array();
+                    $datos=TemperaturaD::DatosTemperaturaHoras();
+
+                    ?>
 
 
 
-                <script type="text/javascript">
+                    <script type="text/javascript">
 
 
-                    Highcharts.chart('containerTemp', {
+                        Highcharts.chart('containerTemp', {
 
-                        chart: {
-                            type: 'columnrange',
-                            inverted: true
-                        },
+                            chart: {
+                                type: 'columnrange',
+                                inverted: true
+                            },
 
-                        title: {
-                            text: 'Variación cada dos horas'
-                        },
-
-                        subtitle: {
-                            text: 'Invernadero - Duitama'
-                        },
-
-                        xAxis: {
-                            categories: ['0-2', '2-4', '4-6', '6-8', '8-10', '10-12', '12-14', '14-16', '16-18', '18-20', '20-22', '22-24']
-                        },
-
-                        yAxis: {
                             title: {
-                                text: 'Temperatura ( °C )'
-                            }
-                        },
+                                text: 'Variación cada dos horas'
+                            },
 
-                        tooltip: {
-                            valueSuffix: '°C'
-                        },
+                            subtitle: {
+                                text: 'Invernadero - Duitama'
+                            },
 
-                        plotOptions: {
-                            columnrange: {
-                                dataLabels: {
-                                    enabled: true,
-                                    formatter: function () {
-                                        return this.y + '°C';
+                            xAxis: {
+                                categories: ['0-2', '2-4', '4-6', '6-8', '8-10', '10-12', '12-14', '14-16', '16-18', '18-20', '20-22', '22-24']
+                            },
+
+                            yAxis: {
+                                title: {
+                                    text: 'Temperatura ( °C )'
+                                }
+                            },
+
+                            tooltip: {
+                                valueSuffix: '°C'
+                            },
+
+                            plotOptions: {
+                                columnrange: {
+                                    dataLabels: {
+                                        enabled: true,
+                                        formatter: function () {
+                                            return this.y + '°C';
+                                        }
                                     }
                                 }
-                            }
-                        },
+                            },
 
-                        legend: {
-                            enabled: false
-                        },
+                            legend: {
+                                enabled: false
+                            },
 
-                        series: [{
-                            name: 'Temperaturas',
-                            data:
+                            series: [{
+                                name: 'Temperaturas',
+                                data:
                                 <?php
-                                    for ($i=0;$i<count($datos);$i++) {
+                                for ($i=0;$i<count($datos);$i++) {
 
-                                        $array=json_encode($datos);
-                                    }
-                                    echo $array;
+                                    $array=json_encode($datos);
+                                }
+                                echo $array;
                                 ?>
-                        }]
+                            }]
 
-                    });
+                        });
 
-                </script>
-            </div>
+                    </script>
+                </div>
+
 
         </div>
     </section>
@@ -256,6 +266,8 @@
 
             <header class="section-header">
                 <h3>Temperatura por días</h3>
+
+               <!-- <input type="week" name="semana" value="2018-W18">-->
             </header>
             <!--<script type="text/javascript" src="https://www.dwebresources.com/widgets/js_calendar.js.php?theme=flick&width=600&height=600"></script>-->
             <?php TemperaturaD::DatosTemperaturaDias(); ?>
@@ -403,7 +415,7 @@
                             }
                             echo $array;
                             ?>
-                            ]
+
                         }]
 
                     });
@@ -501,7 +513,7 @@
     <!--==========================
       Portfolio Section
     ============================-->
-    <section id="portfolio" class="section-bg">
+    <!--<section id="portfolio" class="section-bg">
         <div class="container">
 
             <header class="section-header">
@@ -920,7 +932,7 @@
             </div>
 
         </div>
-    </section>
+    </section>-->
     <br> <br>
 
 
@@ -936,12 +948,7 @@
 
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>Floricultura</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p>La floricultura es la disciplina de la horticultura orientada al cultivo de flores y plantas ornamentales en forma industrializada para uso decorativo.
                     </p>
                 </div>
 
@@ -966,12 +973,13 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contactenos</h4>
                     <p>
-                        <i class="fa fa-map-marker"></i> Invernadero
-                        <br>Boyacá, Duitama
+                        <i class="fa fa-map-marker"></i> Finca Santa Cecilia Flower S.A.S
+                        <br>Carrera 19 17-54 Duitama-Boyacá
+
                         <br>Colombia
                         <br>
                         <i class="fa fa-whatsapp"></i>
-                        <strong> No. Celular:</strong> +57 311 555 0057
+                        <strong> No.Tel:</strong> 760 26 90
                         <br>
                         <i class="fa fa-envelope"></i>
                         <strong> Correo Electrónico:</strong> correo@dominio.com
@@ -1051,6 +1059,24 @@
 
 <!-- Template Main Javascript File -->
 <script src="../js/main.js"></script>
+
+<script type="text/javascript">
+    function e(q) {
+        document.body.appendChild( document.createTextNode(q) );
+        document.body.appendChild( document.createElement("BR") );
+    }
+    function inactividad() {
+        e("Inactivo!!");
+    }
+    var t=null;
+    function contadorInactividad() {
+        t=setTimeout("inactividad()",60);
+    }
+    window.onblur=window.onmousemove=function() {
+        if(t) clearTimeout(t);
+        contadorInactividad();
+    }
+</script>
 
 </body>
 

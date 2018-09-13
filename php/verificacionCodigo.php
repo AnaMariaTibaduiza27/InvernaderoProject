@@ -18,7 +18,7 @@ class verificacionCodigo
             if ($codigo == $codigoIngresado){
                 header("Location: ../Vista/index.php") ;
             } else{
-               echo "Error en la verificación, intente de nuevo";
+                header("Location: ../Vista/preControl.php?respuesta=error");
             }
         } catch (Exception $e) {
             var_dump($e);

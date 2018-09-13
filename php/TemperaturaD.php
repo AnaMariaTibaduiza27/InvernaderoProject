@@ -5,6 +5,10 @@
  * Date: 4/09/2018
  * Time: 6:45 AM
  */
+$vr = new TemperaturaD();
+if (@$_GET['action'] == "dia"){
+    $vr->DatosTemperaturaHoras();
+}
 
 class TemperaturaD
 {
@@ -30,6 +34,7 @@ class TemperaturaD
         $datos=self::conexionS();
         $array=array();
         $array=$datos;
+
 
         $datosHorasr1 = array();
         $datosHorasr2 = array();
@@ -59,225 +64,299 @@ class TemperaturaD
         $datosR11 = array();
         $datosR12 = array();
 
-        for ($i=0; $i<count($array) ; $i++) {
 
-            $horaR1 = strtotime('00:00:00');$horaR2 = strtotime('02:00:00');
-            $horaR3 = strtotime('02:05:00');$horaR4 = strtotime('04:00:00');
-            $horaR5 = strtotime('04:05:00');$horaR6 = strtotime('06:00:00');
-            $horaR7 = strtotime('06:05:00');$horaR8 = strtotime('08:00:00');
-            $horaR9 = strtotime('08:05:00');$horaR10 = strtotime('10:00:00');
-            $horaR11 = strtotime('10:05:00');$horaR12 = strtotime('12:00:00');
-            $horaR13 = strtotime('12:05:00');$horaR14 = strtotime('14:00:00');
-            $horaR15 = strtotime('14:05:00');$horaR16 = strtotime('16:00:00');
-            $horaR17 = strtotime('16:05:00');$horaR18 = strtotime('18:00:00');
-            $horaR19 = strtotime('18:05:00');$horaR20 = strtotime('20:00:00');
-            $horaR21 = strtotime('20:05:00');$horaR22 = strtotime('22:00:00');
-            $horaR23 = strtotime('22:05:00');$horaR24 = strtotime('24:00:00');
+        $mayorR1 = 0;$menorR1 = 50;
+        $mayorR2 = 0;$menorR2 = 50;
+        $mayorR3 = 0;$menorR3 = 50;
+        $mayorR4 = 0;$menorR4 = 50;
+        $mayorR5 = 0;$menorR5 = 50;
+        $mayorR6 = 0;$menorR6 = 50;
+        $mayorR7 = 0;$menorR7 = 50;
+        $mayorR8 = 0;$menorR8 = 50;
+        $mayorR9 = 0;$menorR9 = 50;
+        $mayorR10 = 0;$menorR10 = 50;
+        $mayorR11 = 0;$menorR11 = 50;
+        $mayorR12 = 0;$menorR12 = 50;
 
-            $hora1= $array[$i][5];
-            $hora1F = strtotime($hora1);
-
-
-            if ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR1 && $hora1F<=$horaR2) {
-                    array_push($datosHorasr1,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR3 && $hora1F<=$horaR4){
-                array_push($datosHorasr2,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR5 && $hora1F<=$horaR6){
-                array_push($datosHorasr3,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR7 && $hora1F<=$horaR8){
-                array_push($datosHorasr4,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR9 && $hora1F<=$horaR10){
-                array_push($datosHorasr5,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR11 && $hora1F<=$horaR12){
-                array_push($datosHorasr6,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR13 && $hora1F<=$horaR14){
-                array_push($datosHorasr7,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR15 && $hora1F<=$horaR16){
-                array_push($datosHorasr8,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR17 && $hora1F<=$horaR18){
-                array_push($datosHorasr9,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR19 && $hora1F<=$horaR20){
-                array_push($datosHorasr10,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR21 && $hora1F<=$horaR22){
-                array_push($datosHorasr11,$array[$i][1]);
-
-            } elseif ('2018-08-22'==$array[$i][4] && $hora1F>=$horaR23 && $hora1F<=$horaR24){
-                array_push($datosHorasr12,$array[$i][1]);
-
-            }
-        }
-
-        $mayorR1=0;$menorR1=50;
-        $mayorR2=0;$menorR2=50;
-        $mayorR3=0;$menorR3=50;
-        $mayorR4=0;$menorR4=50;
-        $mayorR5=0;$menorR5=50;
-        $mayorR6=0;$menorR6=50;
-        $mayorR7=0;$menorR7=50;
-        $mayorR8=0;$menorR8=50;
-        $mayorR9=0;$menorR9=50;
-        $mayorR10=0;$menorR10=50;
-        $mayorR11=0;$menorR11=50;
-        $mayorR12=0;$menorR12=50;
-
-        for ($i=0;$i<count($datosHorasr1);$i++){
-
-            if ($mayorR1<$datosHorasr1[$i]){
-                $mayorR1=(int)str_replace(' ', '',$datosHorasr1[$i]);
-            }
-            if ($menorR1>$datosHorasr1[$i]){
-                $menorR1=(int)str_replace(' ', '',$datosHorasr1[$i]);
-            }
-
-        }
-        array_push($datosR1,$menorR1,$mayorR1);
+        $dia=date('d-m-Y');
+        $dia = strtotime ( '-1 day' , strtotime ( $dia ) ) ;
+        $dia = date ( 'Y-m-j' , $dia );
 
 
-        for ($i=0;$i<count($datosHorasr2);$i++){
+        //print_r($dia);
+        /*$dia=$_POST['dia'];
 
-            if ($mayorR2<$datosHorasr2[$i]){
-                $mayorR2=(int)str_replace(' ', '',$datosHorasr2[$i]);
-            }
-            if ($menorR2>$datosHorasr2[$i]){
-                $menorR2=(int)str_replace(' ', '',$datosHorasr2[$i]);
-            }
-        }
-        array_push($datosR2,$menorR2,$mayorR2);
+        if ($dia!=null) {*/
 
-        for ($i=0;$i<count($datosHorasr3);$i++){
 
-            if ($mayorR3<$datosHorasr3[$i]){
-                $mayorR3=(int)str_replace(' ', '',$datosHorasr3[$i]);
-            }
-            if ($menorR3>$datosHorasr3[$i]){
-                $menorR3=(int)str_replace(' ', '',$datosHorasr3[$i]);
-            }
-        }
-        array_push($datosR3,$menorR3,$mayorR3);
+            for ($i = 0; $i < count($array); $i++) {
 
-        for ($i=0;$i<count($datosHorasr4);$i++){
+                $horaR1 = strtotime('00:00:00');
+                $horaR2 = strtotime('02:00:00');
+                $horaR3 = strtotime('02:05:00');
+                $horaR4 = strtotime('04:00:00');
+                $horaR5 = strtotime('04:05:00');
+                $horaR6 = strtotime('06:00:00');
+                $horaR7 = strtotime('06:05:00');
+                $horaR8 = strtotime('08:00:00');
+                $horaR9 = strtotime('08:05:00');
+                $horaR10 = strtotime('10:00:00');
+                $horaR11 = strtotime('10:05:00');
+                $horaR12 = strtotime('12:00:00');
+                $horaR13 = strtotime('12:05:00');
+                $horaR14 = strtotime('14:00:00');
+                $horaR15 = strtotime('14:05:00');
+                $horaR16 = strtotime('16:00:00');
+                $horaR17 = strtotime('16:05:00');
+                $horaR18 = strtotime('18:00:00');
+                $horaR19 = strtotime('18:05:00');
+                $horaR20 = strtotime('20:00:00');
+                $horaR21 = strtotime('20:05:00');
+                $horaR22 = strtotime('22:00:00');
+                $horaR23 = strtotime('22:05:00');
+                $horaR24 = strtotime('24:00:00');
 
-            if ($mayorR4<$datosHorasr4[$i]){
-                $mayorR4=(int)str_replace(' ', '',$datosHorasr4[$i]);
-            }
-            if ($menorR4>$datosHorasr4[$i]){
-                $menorR4=(int)str_replace(' ', '',$datosHorasr4[$i]);
-            }
-        }
-        array_push($datosR4,$menorR4,$mayorR4);
+                $hora1 = $array[$i][5];
+                $hora1F = strtotime($hora1);
 
-        for ($i=0;$i<count($datosHorasr5);$i++){
 
-            if ($mayorR5<$datosHorasr5[$i]){
-                $mayorR5=(int)str_replace(' ', '',$datosHorasr5[$i]);
-            }
-            if ($menorR5>$datosHorasr5[$i]){
-                $menorR5=(int)str_replace(' ', '',$datosHorasr5[$i]);
-            }
-        }
-        array_push($datosR5,$menorR5,$mayorR5);
+                if ($dia == $array[$i][4] && $hora1F >= $horaR1 && $hora1F <= $horaR2) {
+                    array_push($datosHorasr1, $array[$i][1]);
 
-        for ($i=0;$i<count($datosHorasr6);$i++){
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR3 && $hora1F <= $horaR4) {
+                    array_push($datosHorasr2, $array[$i][1]);
 
-            if ($mayorR6<$datosHorasr6[$i]){
-                $mayorR6=(int)str_replace(' ', '',$datosHorasr6[$i]);
-            }
-            if ($menorR6>$datosHorasr6[$i]){
-                $menorR6=(int)str_replace(' ', '',$datosHorasr6[$i]);
-            }
-        }
-        array_push($datosR6,$menorR6,$mayorR6);
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR5 && $hora1F <= $horaR6) {
+                    array_push($datosHorasr3, $array[$i][1]);
 
-        for ($i=0;$i<count($datosHorasr7);$i++){
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR7 && $hora1F <= $horaR8) {
+                    array_push($datosHorasr4, $array[$i][1]);
 
-            if ($mayorR7<$datosHorasr7[$i]){
-                $mayorR7=(int)str_replace(' ', '',$datosHorasr7[$i]);
-            }
-            if ($menorR7>$datosHorasr7[$i]){
-                $menorR7=(int)str_replace(' ', '',$datosHorasr7[$i]);
-            }
-        }
-        array_push($datosR7,$menorR7,$mayorR7);
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR9 && $hora1F <= $horaR10) {
+                    array_push($datosHorasr5, $array[$i][1]);
 
-        for ($i=0;$i<count($datosHorasr8);$i++){
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR11 && $hora1F <= $horaR12) {
+                    array_push($datosHorasr6, $array[$i][1]);
 
-            if ($mayorR8<$datosHorasr8[$i]){
-                $mayorR8=(int)str_replace(' ', '',$datosHorasr8[$i]);
-            }
-            if ($menorR8>$datosHorasr8[$i]){
-                $menorR8=(int)str_replace(' ', '',$datosHorasr8[$i]);
-            }
-        }
-        array_push($datosR8,$menorR8,$mayorR8);
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR13 && $hora1F <= $horaR14) {
+                    array_push($datosHorasr7, $array[$i][1]);
 
-        for ($i=0;$i<count($datosHorasr9);$i++){
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR15 && $hora1F <= $horaR16) {
+                    array_push($datosHorasr8, $array[$i][1]);
 
-            if ($mayorR9<$datosHorasr9[$i]){
-                $mayorR9=(int)str_replace(' ', '',$datosHorasr9[$i]);
-            }
-            if ($menorR9>$datosHorasr9[$i]){
-                $menorR9=(int)str_replace(' ', '',$datosHorasr9[$i]);
-            }
-        }
-        array_push($datosR9,$menorR9,$mayorR9);
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR17 && $hora1F <= $horaR18) {
+                    array_push($datosHorasr9, $array[$i][1]);
 
-        for ($i=0;$i<count($datosHorasr10);$i++){
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR19 && $hora1F <= $horaR20) {
+                    array_push($datosHorasr10, $array[$i][1]);
 
-            if ($mayorR10<$datosHorasr10[$i]){
-                $mayorR10=(int)str_replace(' ', '',$datosHorasr10[$i]);
-            }
-            if ($menorR10>$datosHorasr10[$i]){
-                $menorR10=(int)str_replace(' ', '',$datosHorasr10[$i]);
-            }
-        }
-        array_push($datosR10,$menorR10,$mayorR10);
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR21 && $hora1F <= $horaR22) {
+                    array_push($datosHorasr11, $array[$i][1]);
 
-        for ($i=0;$i<count($datosHorasr11);$i++){
+                } elseif ($dia == $array[$i][4] && $hora1F >= $horaR23 && $hora1F <= $horaR24) {
+                    array_push($datosHorasr12, $array[$i][1]);
 
-            if ($mayorR11<$datosHorasr11[$i]){
-                $mayorR2=(int)str_replace(' ', '',$datosHorasr11[$i]);
-            }
-            if ($menorR11>$datosHorasr11[$i]){
-                $menorR11=(int)str_replace(' ', '',$datosHorasr11[$i]);
-            }
-        }
-        array_push($datosR11,$menorR11,$mayorR11);
-        //print_r("hola");
-        for ($i=0;$i<count($datosHorasr12);$i++){
-
-            if (!empty($datosHorasr12[$i])){
-                $mayorR12=0;
-                $menorR12=0;
-
+                }
             }
 
-            if ($mayorR12<$datosHorasr12[$i]){
-                $mayorR12=(int)str_replace(' ', '',$datosHorasr12[$i]);
+
+            if ($datosHorasr1 == null) {
+                $mayorR1 = 0;
+                $menorR1 = 0;
             }
-            if ($menorR12>$datosHorasr12[$i]){
-                $menorR12=(int)str_replace(' ', '',$datosHorasr12[$i]);
+            for ($i = 0; $i < count($datosHorasr1); $i++) {
+
+                if ($mayorR1 < $datosHorasr1[$i]) {
+                    $mayorR1 = (int)str_replace(' ', '', $datosHorasr1[$i]);
+                }
+                if ($menorR1 > $datosHorasr1[$i]) {
+                    $menorR1 = (int)str_replace(' ', '', $datosHorasr1[$i]);
+                }
+
             }
-        }
-        array_push($datosR12,$menorR12,$mayorR12);
+            array_push($datosR1, $menorR1, $mayorR1);
 
 
+            if ($datosHorasr2 == null) {
+                $mayorR2 = 0;
+                $menorR2 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr2); $i++) {
+
+                if ($mayorR2 < $datosHorasr2[$i]) {
+                    $mayorR2 = (int)str_replace(' ', '', $datosHorasr2[$i]);
+                }
+                if ($menorR2 > $datosHorasr2[$i]) {
+                    $menorR2 = (int)str_replace(' ', '', $datosHorasr2[$i]);
+                }
+            }
+            array_push($datosR2, $menorR2, $mayorR2);
+
+            if ($datosHorasr3 == null) {
+                $mayorR3 = 0;
+                $menorR3 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr3); $i++) {
+
+                if ($mayorR3 < $datosHorasr3[$i]) {
+                    $mayorR3 = (int)str_replace(' ', '', $datosHorasr3[$i]);
+                }
+                if ($menorR3 > $datosHorasr3[$i]) {
+                    $menorR3 = (int)str_replace(' ', '', $datosHorasr3[$i]);
+                }
+            }
+            array_push($datosR3, $menorR3, $mayorR3);
+
+            if ($datosHorasr4 == null) {
+                $mayorR4 = 0;
+                $menorR4 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr4); $i++) {
+
+                if ($mayorR4 < $datosHorasr4[$i]) {
+                    $mayorR4 = (int)str_replace(' ', '', $datosHorasr4[$i]);
+                }
+                if ($menorR4 > $datosHorasr4[$i]) {
+                    $menorR4 = (int)str_replace(' ', '', $datosHorasr4[$i]);
+                }
+            }
+            array_push($datosR4, $menorR4, $mayorR4);
+
+            if ($datosHorasr5 == null) {
+                $mayorR5 = 0;
+                $menorR5 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr5); $i++) {
+
+                if ($mayorR5 < $datosHorasr5[$i]) {
+                    $mayorR5 = (int)str_replace(' ', '', $datosHorasr5[$i]);
+                }
+                if ($menorR5 > $datosHorasr5[$i]) {
+                    $menorR5 = (int)str_replace(' ', '', $datosHorasr5[$i]);
+                }
+            }
+            array_push($datosR5, $menorR5, $mayorR5);
+
+            if ($datosHorasr6 == null) {
+                $mayorR6 = 0;
+                $menorR6 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr6); $i++) {
+
+                if ($mayorR6 < $datosHorasr6[$i]) {
+                    $mayorR6 = (int)str_replace(' ', '', $datosHorasr6[$i]);
+                }
+                if ($menorR6 > $datosHorasr6[$i]) {
+                    $menorR6 = (int)str_replace(' ', '', $datosHorasr6[$i]);
+                }
+            }
+            array_push($datosR6, $menorR6, $mayorR6);
+
+            if ($datosHorasr7 == null) {
+                $mayorR7 = 0;
+                $menorR7 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr7); $i++) {
+
+                if ($mayorR7 < $datosHorasr7[$i]) {
+                    $mayorR7 = (int)str_replace(' ', '', $datosHorasr7[$i]);
+                }
+                if ($menorR7 > $datosHorasr7[$i]) {
+                    $menorR7 = (int)str_replace(' ', '', $datosHorasr7[$i]);
+                }
+            }
+            array_push($datosR7, $menorR7, $mayorR7);
+
+            if ($datosHorasr8 == null) {
+                $mayorR8 = 0;
+                $menorR8 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr8); $i++) {
+
+                if ($mayorR8 < $datosHorasr8[$i]) {
+                    $mayorR8 = (int)str_replace(' ', '', $datosHorasr8[$i]);
+                }
+                if ($menorR8 > $datosHorasr8[$i]) {
+                    $menorR8 = (int)str_replace(' ', '', $datosHorasr8[$i]);
+                }
+            }
+            array_push($datosR8, $menorR8, $mayorR8);
+
+            if ($datosHorasr9 == null) {
+                $mayorR9 = 0;
+                $menorR9 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr9); $i++) {
+
+                if ($mayorR9 < $datosHorasr9[$i]) {
+                    $mayorR9 = (int)str_replace(' ', '', $datosHorasr9[$i]);
+                }
+                if ($menorR9 > $datosHorasr9[$i]) {
+                    $menorR9 = (int)str_replace(' ', '', $datosHorasr9[$i]);
+                }
+            }
+            array_push($datosR9, $menorR9, $mayorR9);
+
+            if ($datosHorasr10 == null) {
+                $mayorR10 = 0;
+                $menorR10 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr10); $i++) {
+
+                if ($mayorR10 < $datosHorasr10[$i]) {
+                    $mayorR10 = (int)str_replace(' ', '', $datosHorasr10[$i]);
+                }
+                if ($menorR10 > $datosHorasr10[$i]) {
+                    $menorR10 = (int)str_replace(' ', '', $datosHorasr10[$i]);
+                }
+            }
+            array_push($datosR10, $menorR10, $mayorR10);
+
+            if ($datosHorasr11 == null) {
+                $mayorR11 = 0;
+                $menorR11 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr11); $i++) {
+
+                if ($mayorR11 < $datosHorasr11[$i]) {
+                    $mayorR2 = (int)str_replace(' ', '', $datosHorasr11[$i]);
+                }
+                if ($menorR11 > $datosHorasr11[$i]) {
+                    $menorR11 = (int)str_replace(' ', '', $datosHorasr11[$i]);
+                }
+            }
+            array_push($datosR11, $menorR11, $mayorR11);
+
+
+            if ($datosHorasr12 == null) {
+                $mayorR12 = 0;
+                $menorR12 = 0;
+            }
+            for ($i = 0; $i < count($datosHorasr12); $i++) {
+                print_r("Alejaaaaa");
+
+
+                if ($mayorR12 < $datosHorasr12[$i]) {
+                    $mayorR12 = (int)str_replace(' ', '', $datosHorasr12[$i]);
+                }
+                if ($menorR12 > $datosHorasr12[$i]) {
+                    $menorR12 = (int)str_replace(' ', '', $datosHorasr12[$i]);
+                }
+            }
+            array_push($datosR12, $menorR12, $mayorR12);
+            $envioDatos=array();
+            array_push($envioDatos,$datosR1,$datosR2,$datosR3,$datosR4,$datosR5,$datosR6,
+                $datosR7,$datosR8,$datosR9,$datosR10,$datosR11,$datosR12);
+
+            return $envioDatos;
+            /*header("Location: ../Vista/index.php?respuesta=correcto") ;
+        } else{
+            header("Location: ../Vista/index.php?respuesta=error") ;
+        }*/
+        //}
         //--------------------------------------------------------------------------------------
         //CREACIÓN DE MATRIZ PARA ENVIAR DATOS A LA VISTA
-        $envioDatos=array();
-        array_push($envioDatos,$datosR1,$datosR2,$datosR3,$datosR4,$datosR5,$datosR6,
-            $datosR7,$datosR8,$datosR9,$datosR10,$datosR11,$datosR12);
 
-        return $envioDatos;
 
     }
 
@@ -323,10 +402,10 @@ class TemperaturaD
         $datosMes11=array();
         $datosMes12=array();
 
-        //ERROR IMPRIME DOS VECES UNA FECHA 
-        $mesElegido1= date('2018-01');
+
+        $mesElegido1= '2018-01-01';
         $mes1=date("Y-m", strtotime($mesElegido1));
-        print_r($mes1);
+        //print_r($mesElegido1);
         $mesElegido2= date('2018-02');
         $mes2=date("Y-m", strtotime($mesElegido2));
         $mesElegido3= date('2018-03');
@@ -412,6 +491,11 @@ class TemperaturaD
         $mayorR11=0;$menorR11=50;
         $mayorR12=0;$menorR12=50;
 
+
+        if ($datosMes1==null){
+            $mayorR1=0;
+            $menorR1=0;
+        }
         for ($i=0;$i<count($datosMes1);$i++){
 
             if ($mayorR1<$datosMes1[$i]){
@@ -423,6 +507,11 @@ class TemperaturaD
         }
         array_push($datosRM1,$menorR1,$mayorR1);
 
+
+        if ($datosMes2==null){
+            $mayorR2=0;
+            $menorR2=0;
+        }
         for ($i=0;$i<count($datosMes2);$i++){
 
             if ($mayorR2<$datosMes2[$i]){
@@ -434,6 +523,10 @@ class TemperaturaD
         }
         array_push($datosRM2,$menorR2,$mayorR2);
 
+        if ($datosMes3==null){
+            $mayorR3=0;
+            $menorR3=0;
+        }
         for ($i=0;$i<count($datosMes3);$i++){
 
             if ($mayorR3<$datosMes3[$i]){
@@ -445,6 +538,10 @@ class TemperaturaD
         }
         array_push($datosRM3,$menorR3,$mayorR3);
 
+        if ($datosMes4==null){
+            $mayorR4=0;
+            $menorR4=0;
+        }
         for ($i=0;$i<count($datosMes4);$i++){
 
             if ($mayorR4<$datosMes4[$i]){
@@ -456,6 +553,10 @@ class TemperaturaD
         }
         array_push($datosRM4,$menorR4,$mayorR4);
 
+        if ($datosMes5==null){
+            $mayorR5=0;
+            $menorR5=0;
+        }
         for ($i=0;$i<count($datosMes5);$i++){
 
             if ($mayorR5<$datosMes5[$i]){
@@ -467,6 +568,10 @@ class TemperaturaD
         }
         array_push($datosRM5,$menorR5,$mayorR5);
 
+        if ($datosMes6==null){
+            $mayorR6=0;
+            $menorR6=0;
+        }
         for ($i=0;$i<count($datosMes6);$i++){
 
             if ($mayorR6<$datosMes6[$i]){
@@ -478,6 +583,10 @@ class TemperaturaD
         }
         array_push($datosRM6,$menorR6,$mayorR6);
 
+        if ($datosMes7==null){
+            $mayorR7=0;
+            $menorR7=0;
+        }
         for ($i=0;$i<count($datosMes7);$i++){
 
             if ($mayorR7<$datosMes7[$i]){
@@ -489,6 +598,10 @@ class TemperaturaD
         }
         array_push($datosRM7,$menorR7,$mayorR7);
 
+        if ($datosMes8==null){
+            $mayorR8=0;
+            $menorR8=0;
+        }
         for ($i=0;$i<count($datosMes8);$i++){
 
             if ($mayorR8<$datosMes8[$i]){
@@ -500,6 +613,10 @@ class TemperaturaD
         }
         array_push($datosRM8,$menorR8,$mayorR8);
 
+        if ($datosMes9==null){
+            $mayorR9=0;
+            $menorR9=0;
+        }
         for ($i=0;$i<count($datosMes9);$i++){
 
             if ($mayorR9<$datosMes9[$i]){
@@ -511,6 +628,10 @@ class TemperaturaD
         }
         array_push($datosRM9,$menorR9,$mayorR9);
 
+        if ($datosMes10==null){
+            $mayorR10=0;
+            $menorR10=0;
+        }
         for ($i=0;$i<count($datosMes10);$i++){
 
             if ($mayorR10<$datosMes10[$i]){
@@ -522,6 +643,10 @@ class TemperaturaD
         }
         array_push($datosRM10,$menorR10,$mayorR10);
 
+        if ($datosMes11==null){
+            $mayorR11=0;
+            $menorR11=0;
+        }
         for ($i=0;$i<count($datosMes11);$i++){
 
             if ($mayorR11<$datosMes11[$i]){
@@ -533,6 +658,10 @@ class TemperaturaD
         }
         array_push($datosRM11,$menorR11,$mayorR11);
 
+        if ($datosMes12==null){
+            $mayorR12=0;
+            $menorR12=0;
+        }
         for ($i=0;$i<count($datosMes12);$i++){
 
             if ($mayorR12<$datosMes12[$i]){
@@ -548,7 +677,7 @@ class TemperaturaD
         array_push($matriz,$datosRM1,$datosRM2,$datosRM3,$datosRM4,
                         $datosRM5,$datosRM6,$datosRM7,$datosRM8,$datosRM9,
                         $datosRM10,$datosRM11,$datosRM12);
-        //print_r($matriz);
+
         return $matriz;
     }
 
@@ -562,7 +691,6 @@ class TemperaturaD
         $fecha1= date('2018-02-03');
         $fechaage1=date("Y", strtotime($fecha1));
         $f1=(int)str_replace('','',$fechaage1 );
-
         $fecha2= date('2017-02-03');
         $fechaage2=date("Y", strtotime($fecha2));
         $f2=(int)str_replace('','',$fechaage2);
@@ -622,6 +750,10 @@ class TemperaturaD
         $mayorR4=0;$menorR4=50;
         $mayorR5=0;$menorR5=50;
 
+        if ($datosAge1==null){
+            $mayorR1=0;
+            $menorR1=0;
+        }
         for ($i=0;$i<count($datosAge1);$i++){
 
             if ($mayorR1<$datosAge1[$i]){
@@ -633,6 +765,10 @@ class TemperaturaD
         }
         array_push($datosRH1,$menorR1,$mayorR1);
 
+        if ($datosAge2==null){
+            $mayorR2=0;
+            $menorR2=0;
+        }
         for ($i=0;$i<count($datosAge2);$i++){
 
             if ($mayorR2<$datosAge2[$i]){
@@ -644,6 +780,10 @@ class TemperaturaD
         }
         array_push($datosRH2,$menorR2,$mayorR2);
 
+        if ($datosAge3==null){
+            $mayorR3=0;
+            $menorR3=0;
+        }
         for ($i=0;$i<count($datosAge3);$i++){
 
             if ($mayorR3<$datosAge3[$i]){
@@ -655,6 +795,10 @@ class TemperaturaD
         }
         array_push($datosRH3,$menorR3,$mayorR3);
 
+        if ($datosAge4==null){
+            $mayorR4=0;
+            $menorR4=0;
+        }
         for ($i=0;$i<count($datosAge4);$i++){
 
             if ($mayorR4<$datosAge4[$i]){
@@ -666,6 +810,10 @@ class TemperaturaD
         }
         array_push($datosRH4,$menorR4,$mayorR4);
 
+        if ($datosAge5==null){
+            $mayorR5=0;
+            $menorR5=0;
+        }
         for ($i=0;$i<count($datosAge5);$i++){
 
             if ($mayorR5<$datosAge5[$i]){

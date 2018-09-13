@@ -48,7 +48,7 @@ session_start();
 
         <div id="logo" class="pull-left">
             <h1>
-                <a href="page.php" class="scrollto">Invernadero</a>
+                <a href="page.php" class="scrollto">FSC Flower S.A.S</a>
             </h1>
         </div>
 
@@ -90,7 +90,7 @@ session_start();
 
             <div class="carousel-inner" role="listbox">
 
-                <div class="carousel-item active" style="background-image: url('../img/intro-carousel/1.jpg');">
+                <div class="carousel-item active" style="background-image: url('../img/intro-carousel/snapdragon.png');">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>Ver Visión</h2>
@@ -99,7 +99,7 @@ session_start();
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url('../img/intro-carousel/2.jpg');">
+                <div class="carousel-item" style="background-image: url('../img/intro-carousel/flor.jpg');">
 
                 </div>
 
@@ -154,12 +154,7 @@ session_start();
             <header class="section-header">
                 <h3>Nuestra Visión</h3>
             </header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Finca Santa Cecilia Flower S.A.S en el año 2020 proyecta ser la empresa líder en el sector de la floricultura cubriendo gran parte del mercado nacional,  gracias a una excelente producción y participación internacional con la exportación de productos propios de la nación, siendo una empresa reconocida por su crecimiento y desarrollo continuo en la aplicación e innovación de nuevas tecnologías agrícolas en la producción de flores del país.</p>
 
         </div>
     </section>
@@ -175,12 +170,7 @@ session_start();
             <header class="section-header">
                 <h3>Nuestra misión</h3>
             </header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Somos una empresa dedicada al cultivo y comercialización de flores, pensando siempre en la satisfacción de nuestros clientes, brindamos productos de alta calidad a precios competitivos en el departamento de Boyacá y el país, generamos desarrollo y crecimiento económico en la región con la creación de puestos de trabajo en diferentes áreas y vinculación  de personal con gran sentido de servicio y principios, promoviendo así el desarrollo y fortalecimiento sustentable de la empresa y una excelente atención.</p>
 
         </div>
     </section>
@@ -197,30 +187,30 @@ session_start();
                     <div class="row">
                         <div class="col-sm">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="../img/per1.png" alt="Card image cap" style="width: 286px;height: 240px">
+                                <img class="card-img-top" src="../img/jefe.jpg" alt="Card image cap" style="width: 286px;height: 240px">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Gustavo Jimenez </h5>
+                                    <p class="card-text">Socio y fundador de la empresa.</p>
                                 </div>
 
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="../img/per1.png" alt="Card image cap" style="width: 286px;height: 240px">
+                                <img class="card-img-top" src="../img/per3.jpg" alt="Card image cap" style="width: 286px;height: 240px">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Sonia Hernandez</h5>
+                                    <p class="card-text">Administradora de la finca.</p>
                                 </div>
 
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="../img/per2.jpg" alt="Card image cap" style="width: 286px;height: 240px">
+                                <img class="card-img-top" src="../img/per4.jpg" alt="Card image cap" style="width: 286px;height: 240px">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Juan Carlos Peña</h5>
+                                    <p class="card-text">Socio y fundador de la empresa.</p>
                                 </div>
 
                             </div>
@@ -326,12 +316,7 @@ session_start();
 
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>Floricultura</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p>La floricultura es la disciplina de la horticultura orientada al cultivo de flores y plantas ornamentales en forma industrializada para uso decorativo.
                     </p>
                 </div>
 
@@ -356,12 +341,13 @@ session_start();
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contactenos</h4>
                     <p>
-                        <i class="fa fa-map-marker"></i> Invernadero
-                        <br>Boyacá, Duitama
+                        <i class="fa fa-map-marker"></i> Finca Santa Cecilia Flower S.A.S
+                        <br>Carrera 19 17-54 Duitama-Boyacá
+
                         <br>Colombia
                         <br>
                         <i class="fa fa-whatsapp"></i>
-                        <strong> No. Celular:</strong> +57 311 555 0057
+                        <strong> No.Tel:</strong> 760 26 90
                         <br>
                         <i class="fa fa-envelope"></i>
                         <strong> Correo Electrónico:</strong> correo@dominio.com
@@ -391,7 +377,7 @@ session_start();
                 <div class="col-lg-3 col-md-6 footer-newsletter">
                     <h4>
                         <i class="fa fa-code"></i> Desarrolladores</h4>
-                    <img src=".../img/team-XMS.jpg" class="img-fluid" alt="Desarrollador">
+                    <img src="../img/team-XMS.jpg" class="img-fluid" alt="Desarrollador">
                     <br>
                     <i class="fa fa-user-circle"></i>
                     <strong> Maria Alejandra Murillo Lara</strong><br>
